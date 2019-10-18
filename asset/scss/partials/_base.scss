@@ -1,0 +1,379 @@
+/* ======================================
+    Base Element Styles
+    ====================================== */
+
+html {
+    @include font();
+}
+
+body {
+    @include font();
+    margin: 0;
+    line-height: 1.6;
+    background-color: $colour-base;
+    color: $colour-text;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+}
+
+nav {
+    margin-top: rem(30px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include font($size: null, $family: $raleway);
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+h2,
+h3 {
+    margin-top: 0;
+}
+
+p,
+ul,
+dl {
+    @include font ($size: rem(18px));
+}
+
+p {
+    #top & {
+        margin-top: rem(60px);
+    }
+    &.copyright {
+        color: lighten($colour-shadow, 10%);
+        @include font (rem(14px));
+    }
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    .spec & {
+        list-style-type: inherit;
+    }
+}
+
+a {
+    text-decoration: none!important;
+    color: $colour-shadow;
+    &:hover {
+        color: $colour-text;
+    }
+
+    nav & {
+        text-transform: uppercase;
+
+        &:hover,
+        &:focus {
+            color: $colour-accent;
+        }
+    }
+}
+
+section {
+    // &:not(#next):not(#top-content):not(.project-title) 
+    &:not(.no-padding) {
+        @include sect($pad: rem(120px));
+    }
+}
+
+footer {
+    background-color: #fff;
+}
+
+
+/* ======================================
+    Base Layout Styles
+    ====================================== */
+
+.mobile-menu {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+
+    &.flex-container {
+        background-color: rgba($colour-base, 90%);
+    }
+    &-item {
+        @include font(rem(50px));
+        margin: auto;
+    }
+}
+
+
+
+.top-header,
+.main-nav ul {
+    @include flex();
+}
+
+.top-header {
+    @include position(fixed, 0, 0, 0, null);
+    height: auto;
+    background: rgba($colour-base, .95);
+    z-index: 999;
+    transition: transform 600ms;
+    @include easing(both, quad);
+    &-slide {
+        transform: translateY(-100%);
+    }
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+}
+
+.tagline {
+    @include font(rem(72px),
+    $raleway,
+    $black);
+    span {
+        @include font(rem(20px),
+        $raleway,
+        $reg);
+    }
+}
+
+.social {
+    li {
+        margin-right: 10px;
+    }
+}
+
+.top-header {
+    margin-top: 0;
+    .admin-bar & {
+        margin-top: rem(30px);
+    }
+}
+
+.img-responsive {
+    margin: 0 auto!important;
+}
+
+#top-content {
+    @include sect ($minh: (100-15)*1vh);
+    @include flex($dir: column, $just: center);
+}
+
+#next {
+    @include position(absolute, null, 0, 0, 0);
+    width: 100%;
+    min-height: 40vh;
+    .next-content {
+        z-index: 9999;
+        a {
+            color: $colour-base!important;
+            h2 {
+                margin: 0!important;
+            }
+        }
+    }
+    &.blur {
+        @include blur($sect: ftr);
+    }
+}
+
+.section-title {
+    text-transform: capitalize;
+    @include title();
+}
+
+.grid {
+    &-item {
+        @include position(relative);
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 1rem;
+        height: 45vh;
+        overflow: hidden;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        &-child {
+            width: 100%;
+            height: 100%;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            transition: all 600ms;
+            border: 1px solid #eee;
+            @include easing(both, circ);
+            &:hover,
+            &:focus {
+                transform: scale(1.2);
+                &::before,
+                span {
+                    opacity: 1;
+                }
+            }
+            &::before {
+                opacity: 0;
+                content: "";
+                background-color: rgba(0, 0, 0, .5);
+                transition: all .5s;
+                @include position($loc: 0);
+            }
+            span {
+                opacity: 0;
+                display: block;
+                margin: auto;
+                height: 1rem;
+                color: $colour-base;
+                text-align: center;
+                font-weight: 600;
+                transition: all .5s;
+                @include position($loc: 0);
+                @include font ($family: $opensans);
+            }
+        }
+    }
+}
+
+@for $i from 1 through 3 {
+    .colc-#{$i} {
+        column-count: #{$i};
+    }
+}
+
+
+.btn {
+    @include btn($margin: rem(30px));
+    &-accent {
+        @include accent() {
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            @include font($size: rem(16px));
+            &:hover {
+                background-color: darken($colour-accent, 15);
+            }
+        }
+    }
+}
+
+
+.project {
+    h2 {
+        @include title();
+    }
+    dt {
+        margin-bottom: rem(10px);
+    }
+    &-title {
+        @include sect($pad: rem(80px));
+    }
+    &-info {
+        margin-bottom: rem(60px);
+    }
+    &-cc {
+        p {
+            @include font($size: rem(14px));
+        }
+    }
+}
+
+.accent {
+    @include accent();
+}
+
+.white {
+    background-color: #fff;
+}
+
+.col-center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entire-cap {
+    img {
+        display: block;
+        max-width: 80%;
+        margin: auto;
+        @include shadow();
+    }
+}
+
+.blur {
+    @include blur();
+}
+
+.close-button {
+    @include position(fixed, rem(20px), rem(10px), null, null);
+    @include font($size: 2rem);
+    height: auto;
+    background: rgba($colour-base, .95);
+    z-index: 2;
+    background-color: rgba($colour-base, .35);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================
+    Angled Background
+    ====================================== */
+
+.angled {
+    &-top {
+        @include angle(before);
+        &-reverse {
+            @include angle(before,
+            true);
+        }
+    }
+
+    &-bottom {
+        @include angle(after);
+        &-reverse {
+            @include angle(after,
+            true);
+        }
+    }
+
+    &-both {
+        @include angle(both);
+        &-reverse {
+            @include angle(both,
+            true);
+        }
+    }
+}
+
+
+
+
+
+
+/* animsition */
+
+.bg-init,
+.animsition-overlay-slide {
+    background-color: #81D4FA;
+}

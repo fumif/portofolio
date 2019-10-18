@@ -1,0 +1,62 @@
+/* ======================================
+    Flexbox
+====================================== */
+
+body {
+    @include flex($dir: column);
+    min-height: 100vh;
+}
+
+header {
+    @include flex();
+}
+
+main {
+    @include flex($dir: column);
+    flex-grow: 1;
+    &>section {
+        flex-grow: 1;
+    }
+}
+
+footer {
+    @include flex();
+    align-items: center;
+    height: rem(100px);
+    text-align: center;
+    .flex-item {
+        flex-grow: 1;
+        flex-basis: $screen-xs;
+    }
+}
+
+.flex-container {
+    @include flex( $just: space-between);
+}
+
+.flex-item {
+    margin-left: calc(1.5rem/4);
+    margin-right: calc(1.5rem/4);
+    &-1,
+    &-2 {
+        @include flex();
+        align-items: flex-end; 
+        // background-color:#add8e6;
+    }
+
+    &-1 {
+        flex-grow: 3;
+        height: 100%;
+    }
+
+    &-2 {
+        flex-grow: 1;
+        justify-content: space-around;
+    }
+}
+
+
+#next {
+    @include flex($just: center);
+    align-items: center;
+}

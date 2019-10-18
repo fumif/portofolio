@@ -1,0 +1,27 @@
+/*
+Theme Name: Angled Portfolio Theme
+Theme URI: N/A
+Author: Fumi Fujita
+Author URI: http://fumifujita.com/
+Description: The original theme for my personal portfolio website.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: grid-layout, flexible-header,accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, full-width-template, post-formats, sticky-post, translation-ready
+Text Domain: angled-p
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@charset "UTF-8";
+@import "bootstrap/variables";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/functions";
+@import "partials/base";
+@import "partials/flexbox";
+@import "partials/media-query";
+@import "partials/wp-gen";
+@import "partials/quicktag";
+

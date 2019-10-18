@@ -1,0 +1,4 @@
+@function rem($target, $context: $font-base) {
+	@return ($target / $context) * 1rem;
+}
+
