@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="top-content" class="no-padding">
+<section id="top-content" class="d-flex align-item-center">
 	<!-- <div class="bg-img"></div> -->
 	<div class="container">
 		<div class="col-lg-offset-1">
@@ -25,14 +25,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3" data-aos="fade-right">
-					<h2 class="section-title text-right">
+					<h2 class="section-title text-md-right text-center">
 						<?php echo $portfolio_title; ?>
 						
 					</h2>
 				</div>
 				<!-- Regular The Loop -->
 
-				<div class="col-md-offset-1 col-sm-offset-0 col-md-8" data-aos="fade-up">
+				<div class="offset-md-1 col-md-8" data-aos="fade-up">
 					<?php if (post_type_exists( 'portfolio' )): ?>
 						<?php get_template_part( 'content', 'portfolio' ); ?>
 					<?php endif; ?>
@@ -51,7 +51,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3" data-aos="fade-right">
-						<h2 class="section-title text-right">
+						<h2 class="section-title text-md-right text-center">
 							<?php echo $about_title; ?>
 						</h2>
 					</div>

@@ -12,7 +12,7 @@ header {
 }
 
 main {
-    @include flex($dir: column);
+    // @include flex($dir: column);
     flex-grow: 1;
     &>section {
         flex-grow: 1;
@@ -20,7 +20,7 @@ main {
 }
 
 footer {
-    @include flex();
+    // @include flex();
     align-items: center;
     height: rem(100px);
     text-align: center;
@@ -30,30 +30,30 @@ footer {
     }
 }
 
-.flex-container {
-    @include flex( $just: space-between);
-}
+// .flex-container {
+//     @include flex( $just: space-between);
+// }
 
-.flex-item {
-    margin-left: calc(1.5rem/4);
-    margin-right: calc(1.5rem/4);
-    &-1,
-    &-2 {
-        @include flex();
-        align-items: flex-end; 
-        // background-color:#add8e6;
-    }
+// .flex-item {
+//     margin-left: calc(1.5rem/4);
+//     margin-right: calc(1.5rem/4);
+//     &-1,
+//     &-2 {
+//         @include flex();
+//         align-items: flex-end; 
+//         // background-color:#add8e6;
+//     }
 
-    &-1 {
-        flex-grow: 3;
-        height: 100%;
-    }
+//     &-1 {
+//         flex-grow: 3;
+//         height: 100%;
+//     }
 
-    &-2 {
-        flex-grow: 1;
-        justify-content: space-around;
-    }
-}
+//     &-2 {
+//         flex-grow: 1;
+//         justify-content: space-around;
+//     }
+// }
 
 
 #next {

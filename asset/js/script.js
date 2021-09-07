@@ -44,11 +44,11 @@ jQuery(document).ready(function($) {
     /*          DOM         */
     /*=========================*/
 
-    if ($('.grid').parent('div').hasClass('col-md-8')) {
-        $('.grid').addClass('colc-2');
-    } else {
-        $('.grid').addClass('colc-3');
-    }
+    // if ($('.grid').parent('div').hasClass('col-md-8')) {
+    //     $('.grid').addClass('colc-2');
+    // } else {
+    //     $('.grid').addClass('colc-3');
+    // }
 
 
     // $(window).on('load resize', function() {
